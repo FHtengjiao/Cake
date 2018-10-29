@@ -6,6 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cake-common" />
+        <module name="cake-managment" />
+        <module name="cake-site" />
         <module name="Common" />
         <module name="Managment" />
         <module name="Site" />

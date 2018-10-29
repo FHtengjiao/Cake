@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
         if ("/login.do".equals(request.getServletPath())) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            if (username != null && username.equals(password)) {
+            if (username != null && !"".equals(username) && username.equals(password)) {
                 request.getSession().setAttribute("username", username);
                 request.getRequestDispatcher("/cake/list.do").forward(request, response);
             } else {

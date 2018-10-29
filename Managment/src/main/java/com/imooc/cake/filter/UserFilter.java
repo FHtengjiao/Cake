@@ -9,6 +9,14 @@ import java.io.IOException;
 @WebFilter(filterName = "UserFilter", urlPatterns = "*.do")
 public class UserFilter implements Filter {
 
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    public void destroy() {
+
+    }
+
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
