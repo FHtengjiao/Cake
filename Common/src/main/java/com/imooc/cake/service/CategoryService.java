@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CategoryService {
 
-    public List<Category> getCategories(Long categoryId) {
+    public List<Category> getCategories() {
         SqlSession session = MyBatisUtils.openSqlSession();
         List<Category> categories = null;
         try {

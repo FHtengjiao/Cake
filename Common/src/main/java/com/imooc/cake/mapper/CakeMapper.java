@@ -17,17 +17,17 @@ public interface CakeMapper {
             @Result(column = "create_time", property = "createTime"),
             @Result(column = "update_time", property = "updateTime")
             })
-    List<Cake> getCakes(Integer skip, Integer size);
+    List<Cake> getCakes(@Param("skip") Integer skip, @Param("size") Integer size);
 
     @Select("SELECT id,category_id categoryId,name,level,price,create_time createTime, update_time updateTime" +
             " FROM cake WHERE category_id = #{categoryId} ORDER BY create_time LIMIT #{skip}, #{size}")
-    List<Cake> getCakesByCategoryId(Integer skip, Integer size, @Param("categoryId") Long categoryId);
+    List<Cake> getCakesByCategoryId(@Param("skip")Integer skip, @Param("size")Integer size, @Param("categoryId") Long categoryId);
 
     @Select("SELECT count(*) FROM cake WHERE category_id = #{categoryId}")
     int countCakesByCategoryId(@Param("categoryId") Long categoryId);
 
     @Insert("INSERT cake(category_id,name,level,price,small_img,create_time,update_time)" +
-            "VALUES(cake.categoryId, cake.name, cake.level, cake.price, cake.smallImg, cake.createTime, cake.updateTime)")
+            "VALUES(#{cake.categoryId}, #{cake.name}, #{cake.level}, #{cake.price}, #{cake.smallImg}, #{cake.createTime}, #{cake.updateTime})")
     void addCake(@Param("cake") Cake cake);
 
     @Select("SELECT small_img smallImg FROM cake WHERE id = #{id} FOR UPDATE")

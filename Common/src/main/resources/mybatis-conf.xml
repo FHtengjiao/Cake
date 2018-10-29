@@ -25,7 +25,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource=""/>
         <package name="com.imooc.cake.mapper"/>
     </mappers>
 </configuration>

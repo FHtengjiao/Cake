@@ -10,6 +10,21 @@ import java.util.Date;
 import java.util.List;
 
 public class CakeService {
+
+    public List<Cake> getCakes(Integer page, Integer size) {
+        SqlSession session = MyBatisUtils.openSqlSession();
+        List<Cake> cakes = new ArrayList<>();
+        try {
+            CakeMapper mapper = session.getMapper(CakeMapper.class);
+            cakes = mapper.getCakes((page - 1) * size, size);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return cakes;
+    }
+
     public List<Cake> getCakesByCategoryId(Long categoryId, Integer page, Integer size) {
         SqlSession session = MyBatisUtils.openSqlSession();
         List<Cake> cakes = new ArrayList<>();

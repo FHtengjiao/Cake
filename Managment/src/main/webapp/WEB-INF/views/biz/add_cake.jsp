@@ -25,7 +25,7 @@
             <div class="page-header">
                 <h3><small>新建</small></h3>
             </div>
-            <form class="form-horizontal" action="/cake/add.do" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="/cake/addCake.do" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">名称 ：</label>
                     <div class="col-sm-8">

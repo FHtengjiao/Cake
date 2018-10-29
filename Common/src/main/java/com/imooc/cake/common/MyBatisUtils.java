@@ -13,7 +13,6 @@ public class MyBatisUtils {
     private static SqlSessionFactory factory;
     private static Reader reader;
 
-
     static {
         String resource = "mybatis-conf.xml";
         try {
